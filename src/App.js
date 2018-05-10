@@ -20,7 +20,7 @@ class App extends Component {
     comments[`comm-${timestamp}`] = comment
 
     this.setState({
-      comments: { comments }
+      comments: comments 
     })
   }
 

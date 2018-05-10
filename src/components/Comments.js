@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Comment from './Comment'
 
 export default class Comments extends Component {
     renderComment = (key, comment) => {
@@ -9,7 +10,7 @@ export default class Comments extends Component {
         return (
             <div>
                 {Object.keys(this.props.comments).map(key => {
-                  return this.renderComment(key, this.props.comments[key])  
+                  return <Comment key={key} comment={this.props.comments[key]} />  
                 })}
             </div>
         )

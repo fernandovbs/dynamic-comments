@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Comment from './Comment'
 
-export default class Comments extends Component {
+class Comments extends Component {
     renderComment = (key, comment) => {
         return <Comment key={key} comment={comment.comment} />
     }
@@ -16,3 +16,5 @@ export default class Comments extends Component {
         )
     }
 }
+
+export default Comments

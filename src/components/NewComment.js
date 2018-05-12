@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class NewComment extends Component {
+class NewComment extends Component {
 
     handleEnter = event => {
         if (event.keyCode===13) {
@@ -18,3 +18,5 @@ export default class NewComment extends Component {
         )
     }
 }
+
+export default NewComment

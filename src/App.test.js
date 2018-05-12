@@ -1,10 +1,9 @@
 import React from 'react'
 import App from './App'
-
 import { shallow } from 'enzyme'
 
-describe('<app />', () => {
+describe('<App />', () => {
   it('renders without crashing', () => {
-    const wrapper = shallow(<app />)
+    const wrapper = shallow(<App />)
   })
 })

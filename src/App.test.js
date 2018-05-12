@@ -6,6 +6,7 @@ describe('<App />', () => {
   const base = {
     syncState : jest.fn()
   }
+  
   it('renders without crashing', () => {
     const wrapper = shallow(<App base={base} />)
     expect(wrapper.length).toBe(1)

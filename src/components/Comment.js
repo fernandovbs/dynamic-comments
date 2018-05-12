@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
 
-export default Comment = props => 
+const Comment = props => 
     <p className="card card-body bg-light">{props.comment}</p>
+
+export default Comment

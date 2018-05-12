@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow, mount, render} from 'enzyme'
-import Comments from './components/Comments'
+import Comments from './Comments'
 
 describe('<Comments />', () =>{
     const commentsMock = {

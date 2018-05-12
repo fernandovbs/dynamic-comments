@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow, mount, render} from 'enzyme'
-import Comment from './components/Comment'
+import Comment from './Comment'
 
 describe('<Comment />', () =>{
     const handleNewCommentMock = jest.fn()

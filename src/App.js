@@ -21,6 +21,7 @@ class App extends Component {
     this.props.auth.onAuthStateChanged((user) => {
       if(user){
         this.setState({ isLoggedIn: true, user })
+        console.log(user)
       }else{
         this.setState({ isLoggedIn: false, user: {}})
       }
@@ -46,8 +47,9 @@ class App extends Component {
       <div className="container">
         { this.state.isLoggedIn ? 
           <div>
+            <img src={ this.state.user.photoURL } alt={ this.state.user.displayName } /> <span>{ this.state.user.displayName }</span>
             <NewComment handleNewComment={this.createNewComment} /> 
-            <div className="text-right">
+            <div className="text-right" style={{margin: '10px'}}>
               <button type="button" onClick={() => this.props.auth.signOut()} className="btn btn-outline-danger pull-right">Logout</button> 
             </div>
           </div>:

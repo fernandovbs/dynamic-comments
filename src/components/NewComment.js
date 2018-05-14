@@ -12,7 +12,7 @@ class NewComment extends Component {
 
     render(){
         return (
-            <div className="row">
+            <div className="row" style={{margin: '10px'}}>
                 <textarea ref="comment" placeholder="Write here..." className="form-control" onKeyDown={this.handleEnter}></textarea>
             </div>
         )

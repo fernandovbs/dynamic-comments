@@ -7,8 +7,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      comments: {
-      },
+      comments: {},
       isLoggedIn: false,
       user: {}
     }
@@ -35,6 +34,7 @@ class App extends Component {
   createNewComment = comment => {
     const comments = {...this.state.comments}
     const timestamp = Date.now()
+    comment.user = this.state.user.displayName
     comments[`comm-${timestamp}`] = comment
 
     this.setState({

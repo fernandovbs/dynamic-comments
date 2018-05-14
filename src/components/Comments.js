@@ -3,7 +3,7 @@ import Comment from './Comment'
 
 class Comments extends Component {
     renderComment = (key, comment) => {
-        return <Comment key={key} comment={comment.comment} />
+        return <Comment key={key} comment={comment} />
     }
 
     render(){

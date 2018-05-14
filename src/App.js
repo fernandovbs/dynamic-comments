@@ -8,7 +8,9 @@ class App extends Component {
     super(props);
     this.state = {
       comments: {
-      }
+      },
+      isLoggedIn: false,
+      user: {}
     }
     
     this.refComments = this.props.base.syncState('comments', {
@@ -16,6 +18,17 @@ class App extends Component {
       state: 'comments'
     })
 
+    this.props.auth.onAuthStateChanged((user) => {
+      if(user){
+        this.setState({ isLoggedIn: true, user })
+      }else{
+        this.setState({ isLoggedIn: false, user: {}})
+      }
+    })
+  }
+
+  auth(provider){
+    this.props.auth.signInWithPopup(this.props.providers[provider])
   }
 
   createNewComment = comment => {
@@ -31,8 +44,17 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <NewComment handleNewComment={this.createNewComment} />
-        <Comments comments={this.state.comments} />
+        { this.state.isLoggedIn ? 
+          <div>
+            <NewComment handleNewComment={this.createNewComment} /> 
+            <div className="text-right">
+              <button type="button" onClick={() => this.props.auth.signOut()} className="btn btn-outline-danger pull-right">Logout</button> 
+            </div>
+          </div>:
+          <div className="alert text-center">
+            <button type="button" onClick={() => this.auth('facebook')} className="btn btn-primary">Enter with Facebook to create comments</button>
+          </div> }
+          <Comments comments={this.state.comments } />
       </div>
     );
   }
